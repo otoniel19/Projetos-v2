@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nivel 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+     <header>
+         <p>Nivel 1</p>
+     </header>
+     
+     <section>
+         <div class="menu">
+           
+           
+           <p>Qual O Nome Completo De JS?</p>
+            <br>
+            
+            <input type="radio" id="1" name="id">
+            <label for="1">JS</label>
+            <input type="radio" name="id" id="2">
+            <label for="2">Javascript</label><br><br>
+            <input type="button" value="verificar" id="btn" onclick="verificar()">
+           
+         </div>
+     </section>
+     
+     <script>
+        function verificar() {
+          let JS = document.getElementsByName('id')[0]
+         
+          if(JS.checked) {
+            alert("ERRADO")
+            window.open
+          }
+          let JSV = document.getElementsByName('id')[1]
+          
+          if(JSV.checked) {
+            alert("CORRETO")
+          }          
+          
+        }
+     </script>
+</body>
+
+</html>
