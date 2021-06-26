@@ -2,49 +2,145 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nivel 1</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nivel 1</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body onload="on()">
+  <header>
+    <p>
+      Nivel 1
+    </p>
+  </header>
+  <section>
+    <div class="menu">
+      <h1>#1</h1>
+      <p>
+        Qual O Nome Correto?
+      </p>
+      <br>
+      <input type="radio" id="1" name="id">
+      <label for="1">JS</label>
+      <input type="radio" name="id" id="2">
+      <label for="2">Javascript</label><br><br>
+      <input type="button" value="verificar" id="btn" onclick="verificar()">
+      <br>
+      <p>
+        Resultado: <i id="resultado"></i>
+      </p>
+      <br><br>
 
-<body>
-     <header>
-         <p>Nivel 1</p>
-     </header>
-     
-     <section>
-         <div class="menu">
-           
-           
-           <p>Qual O Nome Completo De JS?</p>
-            <br>
-            
-            <input type="radio" id="1" name="id">
-            <label for="1">JS</label>
-            <input type="radio" name="id" id="2">
-            <label for="2">Javascript</label><br><br>
-            <input type="button" value="verificar" id="btn" onclick="verificar()">
-           
-         </div>
-     </section>
-     
-     <script>
-        function verificar() {
-          let JS = document.getElementsByName('id')[0]
-         
-          if(JS.checked) {
-            alert("ERRADO")
-            window.open
-          }
-          let JSV = document.getElementsByName('id')[1]
-          
-          if(JSV.checked) {
-            alert("CORRETO")
-          }          
-          
-        }
-     </script>
+      <button type="button" id="bt">Próximo</button>
+
+    </div>
+
+    <br>
+    <br>
+    <div id="x1">
+
+      <h1>#2</h1>
+
+      <p>
+        Em Uma Escola Avia 100 Alunos Homen e 37 Alunos Mulher 34 Homens Saiu e 13 Mulher Também Saiu Quantos Alunos Sobraram?
+        Digite Abaixo
+      </p>
+
+      <input type="text" id="12"><br><br>
+      <input type="button" id="btn" name="valor" value="verificar"><br><br>
+      <p>
+        Resultado: <i name="res"></i>
+      </p>
+      <br>
+      <br>
+      <br>
+      <h1 id="soon">Mais Em Breve!!</h1>
+    </div>
+  </section>
+
+  <script>
+    function on() {
+      let btn = document.getElementById('bt')
+      btn.style.background = "white"
+      btn.style.color = "white"
+      btn.style.border = "none"
+
+      let div = document.getElementById('x1')
+      div.style.background = "white"
+      div.style.color = "white"
+      div.style.border = "none"
+
+      let text = document.getElementById('12')
+      text.style.background = "white"
+      text.style.border = "none"
+      text.style.color = "white"
+
+      let verificar = document.getElementsByName('valor')[0]
+      verificar.style.color = "white"
+      verificar.style.background = "white"
+    }
+
+    function verificar() {
+      let JS = document.getElementsByName('id')
+      let resultado = document.getElementById('resultado')
+
+
+      if (JS[0].checked) {
+        resultado.style.color = "red"
+        resultado.innerHTML = "ERRADO"
+
+      }
+      if (JS[1].checked) {
+        resultado.style.color = "green"
+        resultado.innerHTML = "CORRETO"
+
+        let btn = document.getElementById('bt')
+        btn.style.background = "green"
+        btn.style.color = "black"
+        btn.style.borderRadius = "15px"
+        btn.style.padding = "10px"
+
+
+
+        btn.addEventListener('click', Quiz2)
+      }
+
+    }
+    function Quiz2() {
+
+      let div = document.getElementById('x1')
+      div.style.color = "black"
+
+      let prgnt = document.getElementById('12')
+      prgnt.style.color = "black"
+      prgnt.style.border = "solid"
+
+      let verificar = document.getElementsByName('valor')[0]
+      verificar.style.color = "black"
+      verificar.style.background = "green"
+
+      verificar.addEventListener('click', verificar2)
+
+    }
+    function verificar2(total) {
+      total = 90;
+
+      let x = document.getElementById('12')
+      let res2 = document.getElementsByName('res')[0]
+      let text = (x.value)
+
+      if (text != total) {
+        res2.style.color = "red"
+        res2.innerHTML = "ERRADO"
+      } else {
+        res2.style.color = "green"
+        res2.innerHTML = "CORRETO"
+
+      }
+    }
+
+  </script>
+
 </body>
 
 </html>
